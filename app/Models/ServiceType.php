@@ -16,18 +16,15 @@ class ServiceType extends Model
      */
     protected $fillable = [
         'name',
-        'description',
-        'main_menu_id',
-        'answer',
-        'redirect',
+        'number',
     ];
 
     protected $casts = [
         'name' => 'string' ,
-        'description'  => 'string',
-        'main_menu_id'  => 'string',
-        'answer'  => 'string',
-        'redirect'  => 'string'
+        'number'  => 'int'
     ];
-
+    public function mainMenu ()
+    {
+        return $this->hasMany(MainMenu::class);
+    }
 }

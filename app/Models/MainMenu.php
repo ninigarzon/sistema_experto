@@ -25,4 +25,14 @@ class MainMenu extends Model
         'description'  => 'string',
         'service_type_id'  => 'string'
     ];
+
+    public function serviceType ()
+    {
+        return $this->belongsTo(ServiceType::class);
+    }
+
+    public function details ()
+    {
+        return $this->hasMany(Details::class);
+    }
 }

@@ -16,12 +16,21 @@ class Details extends Model
      */
     protected $fillable = [
         'name',
-        'number',
+        'description',
+        'main_menu_id',
+        'answer',
+        'redirect',
     ];
 
     protected $casts = [
         'name' => 'string' ,
-        'number'  => 'int'
+        'description'  => 'string',
+        'main_menu_id'  => 'string',
+        'answer'  => 'string',
+        'redirect'  => 'string'
     ];
-
+    public function mainMenu ()
+    {
+        return $this->belongsTo(MainMenu::class);
+    }
 }

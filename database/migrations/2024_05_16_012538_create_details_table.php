@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('answer');
             $table->string('redirect');
+            $table->unsignedBigInteger('main_menus_id');
             $table->timestamps();
 
             $table->foreign('main_menus_id')->references('id')->on('main_menus')->onDelete('cascade');
